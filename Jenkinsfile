@@ -17,7 +17,7 @@ pipeline {
 
                 steps {
 
-                    sh 'echo building application'
+                    sh 'echo building application !'
 
                 }
 
