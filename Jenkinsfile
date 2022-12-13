@@ -28,7 +28,7 @@ pipeline {
 
                 steps {
 
-                    echo 'testing application'
+                   sh' echo testing application'
                     
                 }
 
@@ -37,7 +37,7 @@ pipeline {
 
                 steps {
 
-                    echo 'deploying application'
+                    sh 'echo deploying application'
                     
                 }
 
