@@ -18,5 +18,6 @@ RUN a2enmod rewrite
 
 RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
+
 EXPOSE 80
 CMD apachectl -D FOREGROUND
