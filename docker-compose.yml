@@ -23,6 +23,6 @@ services:
           PMA_HOST: mariadb
     
     videgrenier:
-        image: 'videgrenier'
+        image: 'videgrenier:latest'
         ports:
           - '80:80'
