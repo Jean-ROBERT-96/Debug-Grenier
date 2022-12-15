@@ -28,7 +28,13 @@ services:
         build:
           context: .
           dockerfile: Dockerfile
+        environment:
+          -ALLOW_OVERRIDE: true
+          -user: "root"
+          -db: "mariadb"
+          -password: "root"  
+        depends_on:
+          - mariadb  
         ports:
           - '8090:80'
-        environment:
-          - ALLOW_OVERRIDE=true
+     
