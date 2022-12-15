@@ -13,7 +13,7 @@ services:
           - ./import.sql:/docker-entrypoint-initdb.d/import.sql
         
     phpmyadmin:
-        image: 'phpmyadmin:latest'
+        image: 'phpmyadmin'
         restart: 'always'
         version: "3"
         ports:
