@@ -39,7 +39,7 @@ services:
           - mariadb  
 
         volumes:
-          - php.ini:/usr/local/etc/php/php.ini  
+          - 'php.ini:/usr/local/etc/php/php.ini' 
         ports:
           - '8090:80'
      
