@@ -23,6 +23,8 @@ services:
           PMA_HOST: mariadb
     
     videgrenier:
-        image: 'videgrenier:latest'
+        image: 'videgrenier'
         ports:
-          - '80:80'
+          - '8090:80'
+        environment:
+          - ALLOW_OVERRIDE=true
