@@ -37,6 +37,9 @@ services:
           -password: 'root' 
         depends_on:
           - mariadb  
+
+        volumes:
+          - php.ini:/usr/local/etc/php/php.ini  
         ports:
           - '8090:80'
      
