@@ -16,7 +16,7 @@ services:
         image: 'phpmyadmin:latest'
         restart: 'always'
         ports:
-          - '8081:80'
+          - '8091:80'
         depends_on:
           - mariadb
         environment:
