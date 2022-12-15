@@ -16,13 +16,14 @@ pipeline {
             stage("build") {
 
                 steps {
+                    sh 'docker system prune -af --volumes'
 
                     sh 'echo building application !'
 
                     sh 'docker-compose up -d'
 
-                    sh 'docker image prune'
-                    sh ('y')
+                
+                    
 
                 }
 
