@@ -18,6 +18,7 @@ pipeline {
                 steps {
 
                     sh 'echo building application !'
+                    sh 'docker-compose up'
 
                 }
 
