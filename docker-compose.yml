@@ -27,6 +27,8 @@ services:
     
     videgrenier:
         image: 'videgrenier'
+        ports:
+          - '8090:80'
         build:
           context: .
           dockerfile: Dockerfile
@@ -40,6 +42,5 @@ services:
 
         volumes:
           - ./php.ini:/usr/local/etc/php/php.ini
-        ports:
-          - '8090:80'
+        
      
