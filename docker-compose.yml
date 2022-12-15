@@ -29,10 +29,10 @@ services:
           context: .
           dockerfile: Dockerfile
         environment:
-          -ALLOW_OVERRIDE: true
-          -user: "root"
-          -db: "mariadb"
-          -password: "root"  
+          -ALLOW_OVERRIDE: 'true'
+          -user: 'root'
+          -db: 'mariadb'
+          -password: 'root' 
         depends_on:
           - mariadb  
         ports:
