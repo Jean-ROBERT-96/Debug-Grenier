@@ -1,3 +1,4 @@
+version: "3"
 services:
     mariadb:
         image: 'mariadb:latest'
@@ -15,7 +16,6 @@ services:
     phpmyadmin:
         image: 'phpmyadmin'
         restart: 'always'
-        version: "3"
         ports:
           - '8091:80'
         depends_on:
