@@ -7,7 +7,7 @@ services:
           MYSQL_USER: 'webapplication'
           MYSQL_PASSWORD: '653rag9T'
           MYSQL_DATABASE: 'videgrenierenligne'
-          MYSQL_ROOT_PASSWORD: 'xyfec148'
+          MYSQL_ROOT_PASSWORD: 'root'
         ports:
           - '3306:3306'
         volumes:
