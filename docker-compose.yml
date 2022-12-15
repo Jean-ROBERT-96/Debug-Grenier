@@ -24,6 +24,9 @@ services:
     
     videgrenier:
         image: 'videgrenier'
+        build:
+          context: .
+          dockerfile: Dockerfile
         ports:
           - '8090:80'
         environment:
