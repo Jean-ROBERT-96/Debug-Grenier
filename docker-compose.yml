@@ -8,11 +8,11 @@ services:
           MYSQL_PASSWORD: '653rag9T'
           MYSQL_DATABASE: 'videgrenierenligne'
           MYSQL_ROOT_PASSWORD: 'root'
-          
+
         ports:
           - '3306:3306'
         volumes:
-          - ./import.sql:/docker-entrypoint-initdb.d/import.sql
+          - ./sql/import.sql:/docker-entrypoint-initdb.d/import.sql
         
     phpmyadmin:
         image: 'phpmyadmin'
