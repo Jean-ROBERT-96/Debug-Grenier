@@ -22,9 +22,7 @@ services:
         environment:
           PMA_HOST: mariadb
     
-    vide-grenier:
+    videgrenier:
         image: 'videgrenier'
         ports:
           - '80:80'
-        environment:
-          - ALLOW_OVERRIDE=true
