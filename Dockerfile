@@ -7,7 +7,7 @@ COPY ./php.ini /usr/local/etc/php/php.ini
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get install php8.0-mysql
+RUN apt-get install php7.0-mysql
 
 
 
