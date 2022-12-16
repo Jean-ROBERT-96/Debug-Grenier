@@ -18,6 +18,11 @@ RUN a2enmod rewrite
 
 RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
+#RUN apt-get install openssh-server --no-dev --prefer-dist --optimize-autoloader --no-scripts
+#RUN service ssh start
+
+COPY ./php.ini /usr/local/etc/php/php.ini
+
 EXPOSE 22
 EXPOSE 80
 CMD apachectl -D FOREGROUND
