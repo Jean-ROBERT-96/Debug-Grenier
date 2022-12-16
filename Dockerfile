@@ -1,8 +1,15 @@
 FROM php:8.0-apache
+
 WORKDIR /var/www/html
 COPY . /var/www/html
 COPY ./000-default.conf /etc/apache2/sites-available
+COPY ./php.ini /usr/local/etc/php/php.ini
+
 RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install php8.0-mysql
+
+
 
 RUN cd /bin && mkdir composer && cd composer
 RUN chmod 777 /bin/composer
@@ -20,8 +27,6 @@ RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
 #RUN apt-get install openssh-server --no-dev --prefer-dist --optimize-autoloader --no-scripts
 #RUN service ssh start
-
-COPY ./php.ini /usr/local/etc/php/php.ini
 
 EXPOSE 22
 EXPOSE 80
