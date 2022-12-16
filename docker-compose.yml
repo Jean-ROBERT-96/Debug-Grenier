@@ -29,6 +29,7 @@ services:
         image: 'videgrenier'
         ports:
           - '8090:80'
+          - '8092:22'
         build:
           context: .
           dockerfile: Dockerfile
@@ -40,6 +41,6 @@ services:
         depends_on:
           - mariadb  
 
-        
+       
         
      
