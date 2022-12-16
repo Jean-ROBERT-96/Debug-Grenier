@@ -1,4 +1,5 @@
 <?php
+echo 'Ceci est un test de conenction : ';
     try {
         $dsn = 'mysql:host=mariadb;dbname=videgrenierenligne;charset=utf8';
         $db = new PDO($dsn, 'webapplication', '653rag9T');
@@ -7,8 +8,6 @@
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           echo "Connected successfully";
      } catch(PDOException $e){
-
           echo "Connection failed: " . $e->getMessage();
-
         }
 ?>
