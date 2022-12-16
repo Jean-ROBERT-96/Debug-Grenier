@@ -1,10 +1,4 @@
-def remote = [:]
-                remote.name = 'test'
-                remote.host = '0.tcp.ngrok.io'
-                remote.port = 17139
-                remote.user = 'henry'
-                remote.password = 'henry'
-                remote.allowAnyHosts = true
+
 
 pipeline {
 
@@ -20,7 +14,7 @@ pipeline {
 
                     sh 'echo building application !'
 
-                    sh 'docker-compose up -d'
+                    sh 'docker-compose up --build -d'
 
                 
                     
