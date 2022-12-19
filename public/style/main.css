@@ -1083,8 +1083,8 @@ video {
         color: #ea2c5a; }
 
 .cb-content {
-  width: 100vw !important;
-  width: 100vw; }
+  width: 100vh !important;
+  width: 100vh; }
 
 /*
 * Content Index END
@@ -1747,7 +1747,7 @@ footer {
     color: #a1a1a1;
     text-align: left; }
 
-@media (min-width: 100px) and (max-width: 1365px) {
+@media (min-width: 100px) and (max-width: 2500px) {
   .banner-text {
     position: relative;
     top: 0;
