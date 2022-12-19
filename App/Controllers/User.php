@@ -11,6 +11,8 @@ use \Core\View;
 use Exception;
 use http\Env\Request;
 use http\Exception\InvalidArgumentException;
+use App\Utility\Mail;
+use App\Models\User as UserModel;
 
 /**
  * User controller
@@ -152,10 +154,28 @@ class User extends \Core\Controller
         }
 
         session_destroy();
+        setcookie('PHPSESSID', 'localhost', time() - 86400, '/');
 
         header ("Location: /");
 
         return true;
+
+    
+    }
+
+    /**
+     * permet à l'utilisateur de recevoir un nouveau mot de passe par mail
+     */
+    public function passwordForgottenAction(){
+        
+        if($_SERVER['REQUEST_METHOD'] == "GET"){
+            View::renderTemplate('User/forgotten.html');
+        }else{
+            $password = UserModel::resetPassword($_POST["email"]);
+        Mail::sendMail($_POST["email"], "Votre nouveau mot de passe est ".$password, "Votre nouveau mot de passe !");
+        header("location:/login");
+        
+        }
     }
 
 }

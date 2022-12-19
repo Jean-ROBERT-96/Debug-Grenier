@@ -63,4 +63,25 @@ class User extends Model {
     }
 
 
+     /**
+     * Créé un nouveau mot de passe
+     * @access public
+     * @return string
+     * @throws Exception
+     */
+    public static function resetPassword($email){
+        $db = static::getDB();
+        $user = static::getByLogin($email);
+
+        $password = Hash::generateUnique();
+        $hashed = Hash::generate($password, $user['salt']);
+        $stmt = $db->prepare('UPDATE users SET password=? WHERE email=?');
+
+        $stmt->execute(  [$hashed, $email]  );
+
+        return $password;
+
+    }
+
+
 }
