@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "8.0.0",
+    "cypress": "^12.1.0",
+    "chai": "^4.3.0"
   }
 }
