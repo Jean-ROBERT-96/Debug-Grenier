@@ -570,7 +570,8 @@
 }
 
 .cb-content {
-    width: 130% !important; // FIX INTERNET EXPLORER ;
+    width: 100vh !important; // FIX INTERNET EXPLORER ;
+    width: 100vh;
 }
 
 /*
