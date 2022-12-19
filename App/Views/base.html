@@ -8,6 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/favicon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4285f4" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
 
     <title>Vide Grenier En Ligne | {% block title %}{% endblock %}</title>
 
@@ -25,6 +28,7 @@
 </head>
 <body>
 <!-- logo, menu, search, avatar -->
+
 <div class="container-fluid ">
     <div class="row">
         <div class="navbar-container">
@@ -90,12 +94,14 @@
         </div>
     </div>
 </div>
-<!-- /logo -->
+<!-- /logo ----------------------------------------------------------------------->
+{% if user.username|length > 0 %}
+
 
 <div class="mobile-menu">
     <div class="mobile-menu-head">
         <a href="#" class="mobile-menu-close"></a>
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="Vide Grenier en ligne name" class="logo" />
             <span>Vide Grenier en ligne</span>
         </a>
@@ -114,7 +120,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./account">
+                    <a href="/account">
                         <i class="cv cvicon-cv-play-circle"></i>
                         <p>Mon compte</p>
                     </a>
@@ -122,10 +128,38 @@
 
             </ul>
         </div>
-        <a href="./logout" class="btn mobile-menu-logout">Déconnexion</a>
+        <a href="/logout" class="btn mobile-menu-logout">Déconnexion</a>
+    </div>
+</div>
+{% else %}
+
+<div class="mobile-menu">
+    <div class="mobile-menu-head">
+        <a href="#" class="mobile-menu-close"></a>
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Vide Grenier en ligne name" class="logo" />
+            <span>Vide Grenier en ligne</span>
+        </a>
+    </div>
+    <div class="mobile-menu-content">
+        <div class="mobile-menu-list">
+            <ul>
+                <li>
+                    <a href="/">
+                        <i class="cv cvicon-cv-playlist"></i>
+                        <p>Accueil</p>
+                    </a>
+                </li>
+               
+
+            </ul>
+        </div>
+        <a href="/register" class="btn mobile-menu-logout">Connexion</a>
     </div>
 </div>
 
+
+{% endif %}
     {% block body %}
     {% endblock %}
     <footer>
@@ -134,7 +168,7 @@
                 <div class="container padding-def">
                     <div class="col-lg-1  col-sm-2 col-xs-12 footer-logo">
                         <!--<a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="Project name" class="logo" /></a>-->
-                        <a class="navbar-brand" href="./">
+                        <a class="navbar-brand" href="index.html">
                             <img src="/images/logo.png" alt="Vide Grenier en ligne" class="logo" />
                             <span>Vide Grenier en ligne</span>
                         </a>
