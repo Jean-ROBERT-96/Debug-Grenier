@@ -6,43 +6,44 @@ pipeline {
 
     
         stages {
+            if(env.BRANCH_NAME == 'develop' ){
 
-            stage("build") {
+                stage("build") {
 
-                steps {
-                    sh 'docker system prune -af --volumes'
+                    steps {
+                        sh 'docker system prune -af --volumes'
 
-                    sh 'echo building application !'
+                        sh 'echo building application !'
 
-                    sh 'docker-compose up --build -d'
+                        sh 'docker-compose up --build -d'
 
-                
                     
+                        
+
+                    }
 
                 }
 
-            }
 
+                stage("test") {
 
-            stage("test") {
+                    steps {
 
-                steps {
+                    sh' echo testing application'
+                        
+                    }
 
-                   sh' echo testing application'
-                    
                 }
+                stage("deploy") {
 
-            }
-            stage("deploy") {
+                    steps {
 
-                steps {
+                        sh 'echo deploying application'
+                        
+                    }
 
-                    sh 'echo deploying application'
-                    
                 }
-
-            }
-
+        }
             
             
         }

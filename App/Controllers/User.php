@@ -17,6 +17,7 @@ use http\Exception\InvalidArgumentException;
  */
 class User extends \Core\Controller
 {
+   
 
     /**
      * Affiche la page de login
