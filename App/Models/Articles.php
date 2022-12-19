@@ -13,6 +13,28 @@ use App\Utility;
  */
 class Articles extends Model {
 
+
+    /**
+     * donne une image par défaut aux produits qui n'en ont pas
+     * @access public
+     * @param array $a
+     * @return array
+     * 
+     */
+    public static function fillNull($a){
+    
+        for($i=0; $i< count($a); $i++){
+            if(array_key_exists("picture", $a[$i])){
+                if($a[$i]["picture"] == null){
+                    $a[$i]["picture"] = "default.png";
+                }
+            }
+    
+        }
+        return $a;
+     }
+
+     
     /**
      * ?
      * @access public
@@ -37,7 +59,8 @@ class Articles extends Model {
 
         $stmt = $db->query($query);
 
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $a = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return Articles::fillNull($a);
     }
 
     /**
@@ -57,7 +80,8 @@ class Articles extends Model {
 
         $stmt->execute([$id]);
 
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $a = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return Articles::fillNull($a);
     }
 
     /**
@@ -93,7 +117,8 @@ class Articles extends Model {
 
         $stmt->execute([$id]);
 
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $a = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return Articles::fillNull($a);
     }
 
     /**
@@ -112,7 +137,8 @@ class Articles extends Model {
 
         $stmt->execute();
 
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        $a = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        return Articles::fillNull($a);
     }
 
 
