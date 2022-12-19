@@ -7,8 +7,7 @@ COPY ./php.ini /usr/local/etc/php/php.ini
 
 RUN apt-get update && apt-get upgrade -y
 
-RUN apt-get -y install php-mysql
-
+RUN docker-php-ext-install pdo pdo_mysql
 
 
 RUN cd /bin && mkdir composer && cd composer
