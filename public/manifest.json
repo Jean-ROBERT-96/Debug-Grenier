@@ -1,0 +1,33 @@
+{
+    "short_name": "grenier",
+    "name": "grenier",
+    "icons": [
+    {
+      "src":"/images/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+      },
+    {
+      "src":"/images/logo_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+      },
+    {
+    "src":"/images/logo.png",
+    "sizes": "823x823",
+    "type": "image/png"
+    },
+    {
+      "src":"/images/logo.png",
+    "sizes": "823x823",
+    "type": "image/png",
+      "purpose": "any maskable"
+    }
+    ],
+    "start_url": "/",
+    "background_color": "#e05a47",
+    "theme_color": "#e05a47",
+    "display": "standalone",
+    "background": "#000000",
+    "theme": "#FF0000"
+  }

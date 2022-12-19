@@ -92,4 +92,53 @@
             getProductsAndRender();
         });
     </script>
+
+<script type="text/javascript">
+    async function showInAppInstallPromotion(){
+    deferredPrompt.prompt();
+   const { outcome } = await deferredPrompt.userChoice;
+   // The deferredPrompt can only be used once.
+   deferredPrompt = null;
+   // Act on the user's choice
+   if (outcome === 'accepted') {
+     console.log('User accepted the install prompt.');
+   } else if (outcome === 'dismissed') {
+     console.log('User dismissed the install prompt');
+   }
+ }
+ 
+ 
+ 
+ let divs  =document.querySelectorAll("div");
+ let setPrompt=async(e)=>{
+    e.preventDefault();
+     alert("install pwa");
+     await showInAppInstallPromotion();
+ };
+   document.querySelector("button#pwa").addEventListener("click", setPrompt, false);
+ 
+   
+
+ 
+ 
+     if ('serviceWorker' in navigator) {
+     window.addEventListener('load', function() {
+     navigator.serviceWorker.register('./service-worker.js', { scope: '/' }).then(function(registration) {
+     // Registration was successful
+     console.log('Registered!');
+     }, function(err) {
+     // registration failed :(
+     console.log('ServiceWorker registration failed: ', err);
+     }).catch(function(err) {
+     console.log(err);
+     });
+     });
+     } else {
+     console.log('service worker is not supported');
+     }
+ 
+     
+     
+   
+   </script> 
 {% endblock %}
