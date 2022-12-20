@@ -29,10 +29,8 @@ RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts
 RUN ./vendor/bin/phpunit ./tests
 
 
-#UNIT TESTS
-RUN phpunit /.test
 
 #RUN service ssh start
 EXPOSE 22
 EXPOSE 80
-CMD apachectl -D FOREGROUND
+CMD apachectl -D FOREGROUND && ./vendor/bin/phpunit ./tests
