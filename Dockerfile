@@ -25,8 +25,18 @@ RUN a2enmod rewrite
 RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
 #RUN apt-get install openssh-server --no-dev --prefer-dist --optimize-autoloader --no-scripts
-#RUN service ssh start
 
+RUN wget https://phar.phpunit.de/phpunit-9.5.phar
+RUN  chmod +x phpunit-9.5.phar
+RUN  sudo mv phpunit-9.5.phar /usr/local/bin/phpunit
+RUN  sudo apt install php-xml
+RUN sudo apt-get install php-mbstring
+
+
+#UNIT TESTS
+RUN phpunit /.test
+
+#RUN service ssh start
 EXPOSE 22
 EXPOSE 80
 CMD apachectl -D FOREGROUND

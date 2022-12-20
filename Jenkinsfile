@@ -29,9 +29,7 @@ pipeline {
                 steps {
 
                    sh ' echo testing application'
-                   sh 'pwd'
-                   sh 'ls'
-                   sh 'phpunit ./tests'
+                 
                     
                 }
 
