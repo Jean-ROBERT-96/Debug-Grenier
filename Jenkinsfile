@@ -29,7 +29,7 @@ pipeline {
                 steps {
 
                    sh ' echo testing application'
-                   sh 'docker exec -ti testjenkins2_develop_videgrenier_1 sh -c "./vendor/bin/phpunit ./tests"'
+                   sh 'docker exec testjenkins2_develop_videgrenier_1 sh -c "./vendor/bin/phpunit ./tests"'
                    sh 'npm install && npx cypress run'
                 }
 
