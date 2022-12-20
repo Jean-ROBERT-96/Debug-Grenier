@@ -33,4 +33,4 @@ RUN ./vendor/bin/phpunit ./tests
 #RUN service ssh start
 EXPOSE 22
 EXPOSE 80
-CMD apachectl -D FOREGROUND && ./vendor/bin/phpunit ./tests
+CMD apachectl -D FOREGROUND
