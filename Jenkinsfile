@@ -31,7 +31,7 @@ pipeline {
                    sh ' echo testing application'
                    sh 'pwd'
                    sh 'ls'
-                   sh './vendor/bin/phpunit ./tests'
+                   sh 'phpunit ./tests'
                     
                 }
 
