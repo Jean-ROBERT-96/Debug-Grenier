@@ -37,6 +37,7 @@
     'allow_self_signed' => true
     )
     );
+    $mail->CharSet = 'UTF-8';
 
    $mail->SMTPDebug = 0;
 

@@ -37,6 +37,7 @@ $router->add('product', ['controller' => 'Product', 'action' => 'index', 'privat
 $router->add('product/{id:\d+}', ['controller' => 'Product', 'action' => 'show']);
 $router->add('{controller}/{action}');
 $router->add('forgotten', ['controller' => 'User', 'action' => 'passwordForgotten']);
+$router->add('reset', ['controller' => 'User', 'action' => 'resetPassword', 'private' => true]);
 $router->add('contact', ['controller' => 'Product', 'action' => 'contact']);
 
 /*
