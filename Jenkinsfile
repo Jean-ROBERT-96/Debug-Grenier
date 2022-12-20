@@ -29,7 +29,7 @@ pipeline {
                 steps {
 
                    sh' echo testing application'
-                   sh 'vendor/bin/phpunit ./tests'
+                   sh './vendor/bin/phpunit ./tests'
                     
                 }
 
