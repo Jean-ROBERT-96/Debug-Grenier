@@ -1083,8 +1083,7 @@ video {
         color: #ea2c5a; }
 
 .cb-content {
-  width: 100vh !important;
-  width: 100vh; }
+  max-width: 100vw !important; }
 
 /*
 * Content Index END
