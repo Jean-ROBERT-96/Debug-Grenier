@@ -26,11 +26,7 @@ RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
 #RUN apt-get install openssh-server --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
-RUN curl https://phar.phpunit.de/phpunit-9.5.phar
-RUN  chmod +x phpunit-9.5.phar
-RUN  sudo mv phpunit-9.5.phar /usr/local/bin/phpunit
-RUN  sudo apt install php-xml
-RUN sudo apt-get install php-mbstring
+RUN ./vendor/bin/phpunit ./tests
 
 
 #UNIT TESTS
