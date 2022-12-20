@@ -190,7 +190,7 @@ class User extends \Core\Controller
         }else{
             $password = UserModel::resetPasswordByUser($_POST["password"]);
         
-            header("location:/login");
+            header("location:/");
         
         }
     }
