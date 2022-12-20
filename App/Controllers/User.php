@@ -180,4 +180,19 @@ class User extends \Core\Controller
         }
     }
 
+    /**
+     * permet à l'utilisateur de paramétrer un nouveau mot de passe
+     */
+    public function resetPasswordAction(){
+        
+        if($_SERVER['REQUEST_METHOD'] == "GET"){
+            View::renderTemplate('User/reset.html');
+        }else{
+            $password = UserModel::resetPasswordByUser($_POST["password"]);
+        
+            header("location:/login");
+        
+        }
+    }
+
 }
