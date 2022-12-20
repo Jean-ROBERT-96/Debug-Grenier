@@ -73,9 +73,9 @@ class Articles extends Model {
         $db = static::getDB();
 
         $stmt = $db->prepare('
-            SELECT * FROM articles
-            INNER JOIN users ON articles.user_id = users.id
-            WHERE articles.id = ? 
+            SELECT articles.*, users.username, users.email, users.salt, users.is_admin FROM articles, users
+            WHERE articles.user_id = users.id
+            AND articles.id = ? 
             LIMIT 1');
 
         $stmt->execute([$id]);
