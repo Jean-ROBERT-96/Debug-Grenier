@@ -28,7 +28,9 @@ pipeline {
 
                 steps {
 
-                   sh' echo testing application'
+                   sh ' echo testing application'
+                   sh 'pwd'
+                   sh 'ls'
                    sh './vendor/bin/phpunit ./tests'
                     
                 }
