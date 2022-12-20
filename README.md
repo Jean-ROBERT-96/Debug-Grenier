@@ -46,3 +46,8 @@ Les modèles sont utilisés pour récupérer ou stocker des données dans l'appl
 ```php
 $db = static::getDB();
 ```
+
+
+PHPunit:
+ sudo apt install php-xml
+ sudo apt-get install php-mbstring
