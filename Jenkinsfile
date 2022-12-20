@@ -33,6 +33,7 @@ pipeline {
                    sh 'npm install && npx cypress run'
                 }
 
+
             }
             stage("deploy") {
 
