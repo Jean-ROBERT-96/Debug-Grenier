@@ -26,7 +26,7 @@ RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
 #RUN apt-get install openssh-server --no-dev --prefer-dist --optimize-autoloader --no-scripts
 
-RUN ./vendor/bin/phpunit ./tests
+#RUN ./vendor/bin/phpunit ./tests
 
 
 
