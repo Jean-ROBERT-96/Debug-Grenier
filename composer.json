@@ -1,0 +1,15 @@
+{
+    "require": {
+        "twig/twig": "~3.0",
+      "ext-pdo": "*",
+      "ext-json": "*",
+      "phpunit/phpunit": "^9.5",
+        "phpmailer/phpmailer": "^6.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "App\\": "App/"
+        }
+    }
+}

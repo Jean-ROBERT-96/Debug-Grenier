@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}Formulaire de contact{% endblock %}
+
+{% block body %}
+
+   
+<div class="container-fluid bg-image">
+  
+    <div class="row">
+        <div class="login-wraper">
+            {% if success == true %}
+                <p>Votre email a bien été envoyé</p>
+                <script>
+                    let params = (new URL(document.location)).searchParams;
+                    console.log(params);
+                    console.log(params.get("success"));
+                    if(params.get("success")){
+                        console.log("flag set to true")
+                        setTimeout(()=>{
+                            window.location.href = window.location.protocol+"//"+window.location.host
+                        }, 2000)
+                    }
+                </script>
+            {% else %}    
+            
+
+            <div class="hidden-xs">
+                <img src="images/login.jpg" alt="">
+            </div>
+            <div class="banner-text hidden-xs">
+                <div class="line"></div>
+                <div class="b-text">
+                   
+                 <span class="color-active">Contacter {{ article.username }}<br> </span>  <span class="color-b1">
+                </span>
+                </div>
+            </div>
+            <div class="login-window">
+                <div class="l-head">
+                    Formulaire de contact 
+                </div>
+                <div class="l-form">
+                    <form action="" method="post">
+                 
+                        <div class="form-group">
+                            <input type="hidden" value="{{ article.email }}" name="email"/>
+                            <label for="exampleInputMessage1">Votre message</label>
+                            <textarea type="password" class="form-control" id="exampleInputMessage1"
+                                   name="message" 
+                                   >
+                                   Bonjour {{ article.username }}, je suis très intéressé par votre produit {{ article.name }}.
+                                   Pourriez-vous me le donner ?
+                                   Mon email est: {{ user.email }}
+
+                                   Cordialement,
+
+                                   {{ user.username }}
+                                   </textarea>
+                        </div>
+                      
+                        <div class="row">
+                            <div
+                                    class="col-lg-7"><button type="submit" name="submit" class="btn btn-cv1">Envoyer
+                                </button></div>
+                          
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

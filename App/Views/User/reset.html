@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<div class="container-fluid bg-image">
+    <div class="row">
+        <div class="login-wraper">
+            <div class="hidden-xs">
+                <img src="images/login.jpg" alt="">
+            </div>
+            <div class="banner-text hidden-xs">
+                <div class="line"></div>
+                <div class="b-text">
+                    <span class="color-active">Changement de mot de passe<br> </span> 
+                </div>
+            </div>
+            <div class="login-window">
+              
+                <div class="l-form">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="password">Nouveau mot de passe</label>
+                            <input type="text" class="form-control" id="password" name="password"
+                                   placeholder="qskdmkqmlsdqskld">
+                        </div>
+                       
+                      
+                        <div class="row">
+                            <div
+                                    class="col-lg-7"><button type="submit" name="submit" class="btn btn-cv1">Changer votre mot de passe
+                                </button></div>
+                            
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
