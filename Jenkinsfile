@@ -11,7 +11,7 @@ pipeline {
                 steps {
 
                     script{
-                        if (env.BRANCH_NAME== 'release_1.0.0'){
+                        if (env.BRANCH_NAME== 'master'){
                             sh 'docker system prune -af --volumes'
 
                             sh 'echo building application !'
@@ -30,7 +30,7 @@ pipeline {
 
                 steps {
                       script{
-                        if (env.BRANCH_NAME== 'release_1.0.0'){
+                        if (env.BRANCH_NAME== 'master'){
 
                             sh ' echo testing application'
                             sh 'docker exec testjenkins2_develop_videgrenier_1 sh -c "./vendor/bin/phpunit ./tests"'

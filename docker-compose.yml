@@ -1,7 +1,7 @@
 version: "3"
 services:
-    mariadb_release:
-        container_name: mariadb_release
+    mariadb_production:
+        container_name: mariadb_production
         image: 'mariadb:latest'
         restart: 'always'
         environment:
@@ -12,25 +12,25 @@ services:
 
 
         ports:
-          - '8095:3306'
+          - '9000:3306'
         volumes:
           - ./sql/import.sql:/docker-entrypoint-initdb.d/import.sql
         
-    phpmyadmin_release:
+    phpmyadmin_production:
         image: 'phpmyadmin'
         restart: 'always'
         ports:
-          - '8096:80'
+          - '9001:80'
         depends_on:
-          - mariadb_release
+          - mariadb_production
         environment:
-          PMA_HOST: mariadb_release
+          PMA_HOST: mariadb_production
     
-    videgrenier_release:
+    videgrenier_production:
         image: 'videgrenier'
         ports:
-          - '8097:80'
-          - '8098:22'
+          - '9002:80'
+          - '9003:22'
         build:
           context: .
           dockerfile: Dockerfile
@@ -39,10 +39,10 @@ services:
           user: 'root'
           db: 'mariadb'
           password: 'root' 
-          MYSQL_HOST: mariadb_release
+          MYSQL_HOST: mariadb_production
 
         depends_on:
-          - mariadb_release
+          - mariadb_production
 
        
         
