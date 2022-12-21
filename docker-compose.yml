@@ -40,7 +40,7 @@ services:
           db: 'mariadb'
           password: 'root' 
           MYSQL_HOST: mariadb
-          
+
         depends_on:
           - mariadb  
 
