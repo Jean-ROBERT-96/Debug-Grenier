@@ -12,7 +12,7 @@ services:
 
 
         ports:
-          - '3306:3306'
+          - '8095:3306'
         volumes:
           - ./sql/import.sql:/docker-entrypoint-initdb.d/import.sql
         
@@ -20,7 +20,7 @@ services:
         image: 'phpmyadmin'
         restart: 'always'
         ports:
-          - '8091:80'
+          - '8096:80'
         depends_on:
           - mariadb
         environment:
@@ -29,8 +29,8 @@ services:
     videgrenier:
         image: 'videgrenier'
         ports:
-          - '8090:80'
-          - '8092:22'
+          - '8097:80'
+          - '8098:22'
         build:
           context: .
           dockerfile: Dockerfile
@@ -40,7 +40,7 @@ services:
           db: 'mariadb'
           password: 'root' 
           MYSQL_HOST: mariadb
-          
+
         depends_on:
           - mariadb  
 
