@@ -1,10 +1,9 @@
-
+if (env.BRANCH_NAME== 'release_1.0.0'){
 
 pipeline {
 
     agent any
 
-    if (env.BRANCH_NAME== 'release_1.0.0'){
         stages {
 
             stage("build") {
