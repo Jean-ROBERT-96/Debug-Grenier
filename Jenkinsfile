@@ -1,11 +1,13 @@
 
-if (env.BRANCH_NAME== 'develop'){
+
 pipeline {
 
     agent any
 
     
         stages {
+
+            if (env.BRANCH_NAME== 'develop'){
 
             stage("build") {
 
@@ -36,6 +38,7 @@ pipeline {
 
 
             }
+            }
             stage("deploy") {
 
                 steps {
@@ -48,6 +51,6 @@ pipeline {
 
         }    
             
-        }
+        
     
 }
