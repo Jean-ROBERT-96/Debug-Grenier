@@ -22,9 +22,9 @@ services:
         ports:
           - '8096:80'
         depends_on:
-          - mariadb
+          - mariadb_release
         environment:
-          PMA_HOST: mariadb
+          PMA_HOST: mariadb_release
     
     videgrenier_release:
         image: 'videgrenier'
@@ -39,10 +39,10 @@ services:
           user: 'root'
           db: 'mariadb'
           password: 'root' 
-          MYSQL_HOST: mariadb
+          MYSQL_HOST: mariadb_release
 
         depends_on:
-          - mariadb  
+          - mariadb_release
 
        
         
