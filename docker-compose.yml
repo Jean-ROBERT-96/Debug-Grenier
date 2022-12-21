@@ -1,7 +1,7 @@
 version: "3"
 services:
-    mariadb:
-        container_name: mariadb
+    mariadb_release:
+        container_name: mariadb_release
         image: 'mariadb:latest'
         restart: 'always'
         environment:
@@ -16,7 +16,7 @@ services:
         volumes:
           - ./sql/import.sql:/docker-entrypoint-initdb.d/import.sql
         
-    phpmyadmin:
+    phpmyadmin_release:
         image: 'phpmyadmin'
         restart: 'always'
         ports:
@@ -26,7 +26,7 @@ services:
         environment:
           PMA_HOST: mariadb
     
-    videgrenier:
+    videgrenier_release:
         image: 'videgrenier'
         ports:
           - '8097:80'

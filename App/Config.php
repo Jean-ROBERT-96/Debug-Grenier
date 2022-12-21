@@ -14,7 +14,7 @@ class Config
      * Database host
      * @var string
      */
-    const DB_HOST = 'mariadb';
+    const DB_HOST = 'mariadb_release';
 
     /**
      * Database name
