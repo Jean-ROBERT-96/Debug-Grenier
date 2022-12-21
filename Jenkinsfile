@@ -13,14 +13,16 @@ pipeline {
                
 
                 steps {
+                    script{
                      if (env.BRANCH_NAME== 'develop'){
-                    sh 'docker system prune -af --volumes'
+                        sh 'docker system prune -af --volumes'
 
-                    sh 'echo building application !'
+                        sh 'echo building application !'
 
-                    sh 'docker-compose up --build -d'
+                        sh 'docker-compose up --build -d'
 
-                
+                    
+                        }
                     }
 
                 }
@@ -31,10 +33,14 @@ pipeline {
             stage("test") {
                 
                 steps {
+                    script{
+
+                    
                     if (env.BRANCH_NAME== 'develop'){
-                   sh ' echo testing application'
-                   sh 'docker exec testjenkins2_develop_videgrenier_1 sh -c "./vendor/bin/phpunit ./tests"'
-                
+                            sh ' echo testing application'
+                            sh 'docker exec testjenkins2_develop_videgrenier_1 sh -c "./vendor/bin/phpunit ./tests"'
+                            
+                        }
                     }
                 }
 
