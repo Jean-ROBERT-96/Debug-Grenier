@@ -10,9 +10,10 @@ pipeline {
             
 
             stage("build") {
-                if (env.BRANCH_NAME== 'develop'){
+               
 
                 steps {
+                     if (env.BRANCH_NAME== 'develop'){
                     sh 'docker system prune -af --volumes'
 
                     sh 'echo building application !'
@@ -28,9 +29,9 @@ pipeline {
 
 
             stage("test") {
-                if (env.BRANCH_NAME== 'develop'){
+                
                 steps {
-
+                    if (env.BRANCH_NAME== 'develop'){
                    sh ' echo testing application'
                    sh 'docker exec testjenkins2_develop_videgrenier_1 sh -c "./vendor/bin/phpunit ./tests"'
                 
